@@ -21,7 +21,7 @@ const englishContent = `
   <p>- Vector is banned.</p>
   <p>- No LOL emotes after knockdown.</p>
   <p class="rule-number">6. Be active! (WARNING)</p>
-  <p>- Minimum 1500 glory/tag per week.</p>
+  <p>- Minimum 1500 glory/dog-tag per week.</p>
   <p>- Daily presence is expected.</p>
   <p class="rule-number">7. Spend time with the guild.</p>
   <p>- Squad regularly. Support each other.</p>
