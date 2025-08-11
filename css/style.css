@@ -1,0 +1,117 @@
+:root {
+  --bg-color: #0f0f0f;
+  --text-color: #ffffff;
+  --btn-bg: #1e1e1e;
+  --btn-hover: #333;
+}
+
+[data-theme="light"] {
+  --bg-color: #f2f2f2;
+  --text-color: #000000;
+  --btn-bg: #ffffff;
+  --btn-hover: #ddd;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 20px;
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.7;
+  transition: background 0.3s, color 0.3s;
+}
+
+.toggle-bar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.btn {
+  background-color: var(--btn-bg);
+  color: var(--text-color);
+  border: 1px solid #888;
+  padding: 8px 14px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 14px;
+}
+
+.btn:hover {
+  background-color: var(--btn-hover);
+}
+
+h1 {
+  color: #ff4d4d;
+  margin-top: 80px;
+}
+
+p {
+  margin-bottom: 12px;
+}
+
+.rule-number {
+  font-weight: bold;
+  color: #ffd700;
+}
+
+footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  text-align: center;
+  font-size: 14px;
+  color: #888;
+}
+
+.faq {
+  margin-top: 40px;
+}
+
+.faq h2 {
+  color: #ff4d4d;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+}
+
+.faq-item strong {
+  color: #ffd700;
+}
+
+@media (max-width: 500px) {
+  .btn {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+}
+
+[data-theme="light"] .rule-number,
+[data-theme="light"] .faq-item strong {
+  color: #cc9900;
+}
+
+/* Hide scrollbar but keep scrolling */
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none; /* Internet Explorer / old Edge */
+}
