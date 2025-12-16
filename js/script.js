@@ -10,27 +10,23 @@ const englishContent = `
   <p><strong>To be a permanent member, follow these rules:</strong></p>
   <p class="rule-number">1. Must change your in-game name with the ᴳᴿᴮ tag. (STRICT)</p>
   <p>- Before changing a name, you must use the name generator tool to obtain confirmation from the leader/officer and take instructions from the style guide.</p>
-  <p class="rule-number">2. Be respectful to everyone—young or old.</p>
-  <p>- Bad behavior = removal (with proof).</p>
-  <p class="rule-number">3. Accept guild invitation immediately.</p>
+  <p class="rule-number">2. Accept guild invitation immediately.</p>
   <p>- If you're not willing to play, inform squad before leaving.</p>
-  <p class="rule-number">4. Want to invite someone? Ask permission.</p>
+  <p class="rule-number">3. Want to invite someone? Ask permission.</p>
   <p>- If a full squad already has 4 guild players, do not replace without consent.</p>
-  <p class="rule-number">5. Follow custom match rules. (OPTIONAL)</p>
+  <p class="rule-number">4. Follow custom match rules. (OPTIONAL)</p>
   <p>- First round must be with Desert Eagle.</p>
   <p>- Vector is banned.</p>
   <p>- No LOL emotes after knockdown.</p>
-  <p class="rule-number">6. Be active! (WARNING)</p>
+  <p class="rule-number">5. Be active! (WARNING)</p>
   <p>- Minimum 1500 glory/dog-tag per week.</p>
   <p>- Daily presence is expected.</p>
-  <p class="rule-number">7. Spend time with the guild.</p>
-  <p>- Squad regularly. Support each other.</p>
-  <p class="rule-number">8. Guild War is everyone's responsibility.</p>
+  <p class="rule-number">6. Guild War is everyone's responsibility.</p>
   <p>- Held on <strong>Tuesday, Thursday, and Saturday</strong> weekly.</p>
   <p>- Everyone must participate with their assigned squad.</p>
   <p>- If unavailable, inform leader/officer in advance.</p>
   <p>- Unity & respect = participate in war.</p>
-  <p class="rule-number">9. Breaking rules = removal, even for officers.</p>
+  <p class="rule-number">7. Breaking rules = removal, even for officers.</p>
   <p>If you believe in honor and love while gaming, ᴳᴿメʙʟᴏᴏᴅʟɪɴᴇ is your family!</p>
   <p>Join now and dominate the Free Fire battlefield!</p>
   <p><strong>– Leader, ᴳᴿメʙʟᴏᴏᴅʟɪɴᴇ</strong></p>
