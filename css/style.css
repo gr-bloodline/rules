@@ -3,6 +3,8 @@
   --text-color: #ffffff;
   --btn-bg: #1e1e1e;
   --btn-hover: #333;
+  --blood-color: rgba(255, 0, 0, 0.15);
+  --blood-dark: rgba(139, 0, 0, 0.3);
 }
 
 [data-theme="light"] {
@@ -10,6 +12,8 @@
   --text-color: #000000;
   --btn-bg: #ffffff;
   --btn-hover: #ddd;
+  --blood-color: rgba(255, 0, 0, 0.1);
+  --blood-dark: rgba(200, 0, 0, 0.2);
 }
 
 body {
@@ -21,7 +25,80 @@ body {
   margin: auto;
   line-height: 1.7;
   transition: background 0.3s, color 0.3s;
+  position: relative;
+  min-height: 100vh;
 }
+
+/* Blood Animation Background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(circle at 10% 20%, var(--blood-color) 0%, transparent 30%),
+              radial-gradient(circle at 90% 50%, var(--blood-dark) 0%, transparent 40%),
+              radial-gradient(circle at 30% 80%, var(--blood-color) 0%, transparent 35%),
+              radial-gradient(circle at 70% 10%, var(--blood-dark) 0%, transparent 25%);
+  animation: bloodDrip 15s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+@keyframes bloodDrip {
+  0% {
+    background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+  }
+  25% {
+    background-position: 5% 10%, -5% 5%, 3% -3%, -2% 7%;
+  }
+  50% {
+    background-position: -3% 20%, 7% 15%, -4% 10%, 5% 15%;
+    background-size: 110% 110%, 105% 105%, 108% 108%, 102% 102%;
+  }
+  75% {
+    background-position: 2% 5%, -2% 25%, 5% 20%, -3% 10%;
+  }
+  100% {
+    background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+  }
+}
+
+/* Add floating blood droplets */
+body::after {
+  content: '🩸';
+  position: fixed;
+  font-size: 20px;
+  color: #ff0000;
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: -1;
+  animation: floatBlood 20s linear infinite;
+  bottom: -10px;
+  left: 5%;
+}
+
+@keyframes floatBlood {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0.1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0.3;
+  }
+}
+
+/* Multiple blood droplets with different delays */
+.droplet-1::after { content: '🩸'; animation-delay: 0s; left: 10%; }
+.droplet-2::after { content: '🩸'; animation-delay: 5s; left: 30%; }
+.droplet-3::after { content: '🩸'; animation-delay: 10s; left: 50%; }
+.droplet-4::after { content: '🩸'; animation-delay: 15s; left: 70%; }
+.droplet-5::after { content: '🩸'; animation-delay: 7s; left: 90%; }
 
 .toggle-bar {
   display: flex;
@@ -42,15 +119,19 @@ body {
   cursor: pointer;
   transition: background 0.3s;
   font-size: 14px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
 .btn:hover {
   background-color: var(--btn-hover);
+  transform: scale(1.05);
 }
 
 h1 {
   color: #ff4d4d;
   margin-top: 80px;
+  text-shadow: 0 0 10px rgba(255, 77, 77, 0.3);
 }
 
 p {
@@ -60,6 +141,44 @@ p {
 .rule-number {
   font-weight: bold;
   color: #ffd700;
+}
+
+.warning-box {
+  background: rgba(255, 0, 0, 0.1);
+  border-left: 4px solid #ff0000;
+  padding: 15px 20px;
+  margin: 30px 0;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 2px 10px rgba(255, 0, 0, 0.2);
+}
+
+.warning-box h3 {
+  color: #ff0000;
+  margin-top: 0;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.warning-box h3::before {
+  content: "⚠️";
+  font-size: 20px;
+}
+
+.warning-box p {
+  margin-bottom: 5px;
+  color: var(--text-color);
+}
+
+.warning-box ul {
+  margin: 5px 0;
+  padding-left: 20px;
+}
+
+.warning-box li {
+  margin-bottom: 5px;
 }
 
 footer {
@@ -81,6 +200,10 @@ footer {
 
 .faq-item {
   margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px 15px;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
 }
 
 .faq-item strong {
@@ -96,6 +219,11 @@ footer {
   h1 {
     font-size: 20px;
   }
+  
+  .toggle-bar {
+    top: 10px;
+    right: 10px;
+  }
 }
 
 [data-theme="light"] .rule-number,
@@ -104,14 +232,11 @@ footer {
 }
 
 /* Hide scrollbar but keep scrolling */
-
-/* Chrome, Edge, Safari */
 ::-webkit-scrollbar {
   display: none;
 }
 
-/* Firefox */
 html {
   scrollbar-width: none;
-  -ms-overflow-style: none; /* Internet Explorer / old Edge */
+  -ms-overflow-style: none;
 }
