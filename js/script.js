@@ -26,7 +26,19 @@ const englishContent = `
   <p>- Everyone must participate with their assigned squad.</p>
   <p>- If unavailable, inform leader/officer in advance.</p>
   <p>- Unity & respect = participate in war.</p>
-  <p class="rule-number">7. Breaking rules = removal, even for officers.</p>
+  
+  <!-- Moved Rule #7 to Warning Section -->
+  <div class="warning-box">
+    <h3>IMPORTANT WARNING</h3>
+    <p><strong>⚔️ Breaking rules = Immediate consequences ⚔️</strong></p>
+    <ul>
+      <li>First offense: Official warning</li>
+      <li>Second offense: Demotion (if officer)</li>
+      <li>Third offense: Removal from guild (regardless of rank)</li>
+    </ul>
+    <p><em>No one is above the rules — officers and members alike are held to the same standards.</em></p>
+  </div>
+
   <p>If you believe in honor and love while gaming, ᴳᴿメʙʟᴏᴏᴅʟɪɴᴇ is your family!</p>
   <p>Join now and dominate the Free Fire battlefield!</p>
   <p><strong>– Leader, ᴳᴿメʙʟᴏᴏᴅʟɪɴᴇ</strong></p>
@@ -68,6 +80,9 @@ function toggleLanguage() {
     htmlTag.lang = "bn";
   }
   isBangla = !isBangla;
+  
+  // Save preference
+  localStorage.setItem("language-mode", isBangla ? "bangla" : "english");
 }
 
 // Theme functions
@@ -106,8 +121,21 @@ function initTheme() {
   });
 }
 
-// Initialize theme when DOM is loaded
-document.addEventListener("DOMContentLoaded", initTheme);
+// Initialize language
+function initLanguage() {
+  const savedLang = localStorage.getItem("language-mode");
+  if (savedLang === "english" && isBangla) {
+    toggleLanguage();
+  } else if (savedLang === "bangla" && !isBangla) {
+    toggleLanguage();
+  }
+}
+
+// Initialize everything when DOM is loaded
+document.addEventListener("DOMContentLoaded", () => {
+  initTheme();
+  initLanguage();
+});
 
 // Make functions available globally
 window.toggleLanguage = toggleLanguage;
