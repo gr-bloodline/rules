@@ -27,7 +27,7 @@ const englishContent = `
   <p>- If unavailable, inform leader/officer in advance.</p>
   <p>- Unity & respect = participate in war.</p>
   
-  <!-- Moved Rule #7 to Warning Section -->
+  <!-- Warning Section -->
   <div class="warning-box">
     <h3>IMPORTANT WARNING</h3>
     <p><strong>⚔️ Breaking rules = Immediate consequences ⚔️</strong></p>
@@ -42,22 +42,6 @@ const englishContent = `
   <p>If you believe in honor and love while gaming, ᴳᴿメʙʟᴏᴏᴅʟɪɴᴇ is your family!</p>
   <p>Join now and dominate the Free Fire battlefield!</p>
   <p><strong>– Leader, ᴳᴿメʙʟᴏᴏᴅʟɪɴᴇ</strong></p>
-
-  <div class="faq">
-    <h2>🧠 Questions & Answers (FAQ)</h2>
-    <div class="faq-item">
-      <strong>Q: I'm new to the game. Can I join?</strong>
-      <p>A: Of course! If you follow rules and show respect, you're welcome!</p>
-    </div>
-    <div class="faq-item">
-      <strong>Q: What happens if I don't hit 1500 Glory weekly?</strong>
-      <p>A: If you have a reason, inform a leader or officer beforehand.</p>
-    </div>
-    <div class="faq-item">
-      <strong>Q: What if someone breaks the rules?</strong>
-      <p>A: Report it with proof. We'll handle it accordingly.</p>
-    </div>
-  </div>
 `;
 
 // State variables
